@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
-}
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@layer base {
+  html {
+    font-family: "Mouse Memoirs", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.welcome {
+  background-image: url("./colorful-abstract-background_23-2148449110.jpg");
+  background-size: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.gravity1,
+.gravity2 {
+  background-image: url("./bg2.jpg");
 }
 
-@keyframes App-logo-spin {
+.gravity6 {
+  background-image: url("./city-park.jpg");
+  opacity: 90%;
+}
+/* .gravity7 {
+  background-image: url("");
+  opacity: 90%;
+  
+} */
+
+.cityBg {
+  background-image: url("./city.jpg");
+}
+.park {
+  background-image: url("./park.jpg");
+  background-position: 60%;
+  opacity: 90%;
+}
+
+@keyframes slideIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.box {
+  animation: slideIn 1s ease-out;
+}
+
+.tug {
+  animation: ropePull 10s 2;
+}
+
+@keyframes ropePull {
+  0% {
+    transform: rotate(-1deg) translateX(2rem);
+  }
+  25% {
+    transform: rotate(1deg) translateX(-2rem);
+  }
+
+  50% {
+    transform: rotate(1deg) translateX(-2rem);
+  }
+  100% {
+    transform: rotate(-1deg) translateX(10rem);
+  }
+}
+.earthy {
+  animation: earthOliver 10s 2s forwards;
+  animation-delay: 1s;
+}
+.earth {
+  animation: earth 12s 2s forwards;
+  animation-delay: 1s;
+}
+
+@keyframes earthOliver {
+  0% {
+    opacity: 100%;
+  }
+  2% {
+    opacity: 0%;
+  }
+  3% {
+    opacity: 100%;
+  }
+  100% {
+    transform: scale(0.01);
+  }
+}
+@keyframes earth {
+  0% {
+    opacity: 100%;
+  }
+  2% {
+    opacity: 0%;
+  }
+  3% {
+    opacity: 100%;
+  }
+
+  100% {
+    transform: scale(6) translateY(-2rem);
+  }
+}
+
+/* .bird {
+  background-image: url("./sky.jpg");
+} */
+
+/* .template {
+  position: relative;
+}
+.template {
+  animation: walk 4s linear both;
+}
+@keyframes walk {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100%;
+  }
+} */
+
+/* .template:active {
+  transform: translate(700px);
+  transition: transform 4s ease;
+} */
+.bunny-jump {
+  animation: bounce 2s 3s linear 3;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(20%);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+}
+
+.intro {
+  animation: intro 2s infinite;
+}
+@keyframes intro {
+  0%,
+  100% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(45deg) scale(1.05);
   }
 }
